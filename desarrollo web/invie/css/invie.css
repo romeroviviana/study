@@ -71,7 +71,7 @@ body{
 	margin: 10px;
 	border-radius: 8px;
 }
-button{
+.button{
 	border-radius: 5px;
 	background: #fd324e;
 	color: white;
@@ -88,4 +88,53 @@ button{
 }
 .guitarra ol{
 	padding: 0;
+}
+.footer{
+	background: #273b47;
+}
+.contacto img{
+	display: block;
+}
+.contacto strong{
+	display: block;
+}
+.contacto a{
+	color: #fff;
+	text-decoration: none;
+	margin: 10px 10px 10px 0;
+}
+.footer .contenedor{
+	display: flex;
+	justify-content: space-between;
+}
+.contacto{
+	display: flex;
+	width: 300px;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.formulario{
+	width: 400px;
+	display: flex;
+	color: #fff;
+	padding: 50px 10px;
+}
+.col-1, .col2{
+	display: flex;
+	flex-direction: column;
+}
+.col-1{
+	margin-right: 15px;
+}
+.col-2{
+	align-items: flex-start;
+}
+.intereses label{
+	font-size: 10px;
+}
+.formulario label, .sexo , .intereses{
+	margin-bottom: 10px;
+}
+.sexo{
+	margin-top: 10px;
 }
