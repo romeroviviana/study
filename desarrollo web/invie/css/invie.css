@@ -10,6 +10,9 @@ body{
 	margin-top: 70px;
 	line-height: 70px;
 }
+.titulo span{
+	text-decoration: underline;
+}
 .title-a{
 	font-size: 24px;
 	margin-top: 0;
@@ -22,11 +25,15 @@ body{
 	font-size: 35px;
 	font-family: 'Montserrat', sans serif;
 }
-.portada {
+.background{	
 	background-image: url("../images/background.png");
+	background-size: cover;
+}
+.portada {
 	color: #fff;
 	padding: 20px;
 	margin: auto;
+	height: 500px;
 }
 .portada button{
 	margin-bottom: 70px;
@@ -40,6 +47,10 @@ body{
 	position: absolute;
 	right: 0;
 }
+.menu a{
+	color: white;
+	text-decoration: none;
+}
 .header{
 	position: relative;
 }
@@ -49,11 +60,13 @@ body{
 }
 .logotipo{	
 	display: inline-block;
+	margin-left: 0px;
 }
 
 .contenedor{
 	width: 800px;
 	margin: auto;
+	position: relative;
 }
 .right {
 	float: right;
@@ -63,20 +76,28 @@ body{
 .left {
 	float: left;
 	position: relative;
-	bottom: -80px;
+	/*bottom: -80px;*/
 }
 .guitarra{
 	border: 1px solid #1F313C;
 	padding: 10px;
-	margin: 10px;
+	margin: 10px 10px 40px 10px;
 	border-radius: 8px;
+	margin-bottom: 60px !important;
+}
+.guitarra.b{
+	height: 190px;
 }
 .button{
-	border-radius: 5px;
+	border-radius: 12px;
 	background: #fd324e;
 	color: white;
 	border: none;
-	padding: 7px;
+	padding: 7px 12px;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 18px;
+	background: linear-gradient( to left, #fe344e, #ff7250);
 }
 .contenedor-guitarra-a{
 	margin-right: 350px;
@@ -85,12 +106,14 @@ body{
 .contenedor-guitarra-b{
 	margin-left: 350px;
 	padding-left: 20px;
+	bottom: 90px;
 }
 .guitarra ol{
 	padding: 0;
 }
 .footer{
 	background: #273b47;
+	padding: 50px 10px;
 }
 .contacto img{
 	display: block;
@@ -112,16 +135,25 @@ body{
 	width: 300px;
 	flex-wrap: wrap;
 	align-items: center;
+	height: 200px;
+}
+input, textarea{
+	outline: 0;
+}
+input:focus, textarea:focus{
+	background: lightgray;
 }
 .formulario{
 	width: 400px;
 	display: flex;
-	color: #fff;
-	padding: 50px 10px;
+	color: #fff;	
 }
 .col-1, .col2{
 	display: flex;
 	flex-direction: column;
+}
+.col2 button{
+	margin-top: 15px;
 }
 .col-1{
 	margin-right: 15px;
@@ -153,4 +185,7 @@ td{
 table, td, th{
 	border: 1px solid #000;
 	border-collapse: collapse;
+}
+.tabla{
+	margin: 50px 0;
 }
