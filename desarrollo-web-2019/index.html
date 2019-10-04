@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+	<i class="icon-menu burger-button" id="burger-button"></i>
 	<header class="header">
 		<div class="container">
 			<figure class="logo">
@@ -38,7 +39,7 @@
 			<h1>
 				Hola! Soy <strong>Leonidas Esteban</strong><br> Desarrollador  <strong>Javascript</strong> con <br>pasión por la <strong>enseñanza</strong>
 			</h1>
-			<img src="images/hero.jpg" alt="" width="500" height="300" alt="imagen principal" class="hero-img" >
+			<img src="images/hero.jpg" alt="" width="" height="" alt="imagen principal" class="hero-img" >
 			
 		</div>
 	</section>
@@ -138,5 +139,21 @@
 			</div>			
 		</div>
 	</footer>
+	<script>
+		const menu = document.querySelector('.menu');
+		const burguerButton = document.querySelector('#burger-button');
+		burguerButton.addEventListener('click',hideShow)
+
+		function hideShow(){
+			if(menu.classList.contains('is-active')){
+
+				menu.classList.remove('is-active');
+			}
+			else{
+				menu.classList.add('is-active');
+
+			}
+		}
+	</script>
 </body>
 </html>

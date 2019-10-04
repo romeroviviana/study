@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Olas</title>
+	<style>
+		body{
+			margin: 0;
+		}
+		.container{
+			height: 500px;
+			background: #0f9bf6;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+		}
+		.content{
+			font-family: Arial;
+			text-align: center;
+			font-size: 2em;
+			color: rgba(255, 255, 255, .8);
+
+		}
+		.waves{
+			position: absolute;
+			bottom: -135px;
+			height: 527px;
+			width: 100%;
+			overflow: hidden;
+		}
+		.circulo{
+			width: 2402px;
+			height: 427px;
+			background: url('waves.png') center bottom no-repeat;
+			position: absolute;
+			animation: 5s ease-in-out wave infinite alternate;
+			left: -180px;
+			bottom: 0;
+		}
+		.circulo.a{
+			background-position: 0 -854px;
+		}
+		.circulo.b{
+			animation-delay: .6s;
+			background-position: 0 -427px;
+		}
+		.circulo.c{
+			background-position: 0 0px;
+			animation-delay: 1.2s;
+		}
+		@keyframes wave{
+			0%{
+				transform: translate(0, 0);
+			}
+			50%{
+				transform: translate(-80px, 30px);
+			}
+			100%{
+				transform: translate(160px, -60px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<h1>Hola Mundo!</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+		<div class="waves">
+			<div class="circulo a"></div>
+			<div class="circulo b"></div>
+			<div class="circulo c"></div>
+		</div>
+	</div>
+</body>
+</html>

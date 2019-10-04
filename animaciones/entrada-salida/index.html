@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Entrada y salida</title>
+	<style>
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* height: 100vh; */
+			margin: 0;
+			font-family: Arial;
+			flex-direction: column;
+		}
+		.overlay{
+			background: rgba(0,0,0,.8);
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			opacity: 0;
+			visibility: hidden;
+			transition: 1.1s ease-in;
+		}
+		.overlay.active{
+			opacity: 1;
+			visibility: visible;
+		}
+		.modal{
+			/* width: 200px; */
+			/* height: 200px; */
+			padding: 2em;
+			width: 500px;
+			background: white;
+			animation: animationIn .8s forwards;
+			border-radius: .5em;
+		}
+		.btn{
+			text-align: center;
+			background: lightgray;
+			padding: .6em .8em .8em;
+			border: none;
+			color: white;
+			margin: 5px;
+			border-radius: 5px;
+			cursor: pointer;
+			box-shadow: inset 0 -.2em rgb(0,0,0, .2);
+			outline: 0;
+			transition: .2s;
+			will-change: transform;
+		}
+		.btn-close{
+			background: none;
+			border:  none;
+			float: right;
+			cursor: pointer;
+		}
+		.btn.primary{
+			background: #7dc800;	
+		}
+		.btn.warning{
+			background: #ff463b;	
+		}
+		.btn:active{
+			transform: scale(.9);
+		}
+		@keyframes animationIn{
+			0%{
+				transform: translateY(-3000px);
+			}
+			60%{
+				transform: translateY(25px);
+			}
+			75%{
+				transform: translateY(25px);
+			}
+			90%{
+				transform: translateY(5px);
+			}
+		}
+		@keyframes animationOut{
+			0%{
+				transform: translateY(5px);
+			}
+			60%{
+				transform: translateY(25px);
+			}
+			75%{
+				transform: translateY(25px);
+			}
+			100%{
+				transform: translateY(-3000px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<img src="platzi.png" alt="" onclick="showModal()" >
+	<div class="overlay" id="overlay">
+		<div class="modal" id="modal">
+			<button class="btn-close"onclick="hideModal()">X</button>
+			<h1>Atención</h1>
+			<p>Estas a punto de crear un modal</p>
+			<p>te gusto?</p>
+			<div class="modal-buttons">
+				<button class="btn primary" id="hide-modal">Si</button>
+				<button class="btn warning" onclick="hideModal()">No :(</button>
+			</div>
+		</div>
+		
+	</div>
+</body>
+<script>
+	const hideButton = document.getElementById("hide-modal");
+	const modal = document.getElementById("modal");
+	const overlay = document.getElementById("overlay");
+
+	hideButton.addEventListener('click', (event) => {
+		hideModal();
+	});
+
+	function showModal(){
+		modal.style.animation = 'animationIn .8s forwards'
+		overlay.classList.add('active');
+	}
+	function hideModal(){
+		modal.style.animation = 'animationOut .8s forwards'
+		overlay.classList.remove('active');
+	}
+</script>
+</html>
