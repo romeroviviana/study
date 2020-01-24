@@ -1,0 +1,17 @@
+/*--------------------------------*\
+    $COLORS
+\*--------------------------------*\
+/*
+* Branding Colors
+*/
+table td {
+  background: #ea83ee;
+}
+
+.btn {
+  display: inline-block;
+  color: white;
+  background-color: #ea83ee;
+  line-height: 2.5;
+  border-radius: 3px;
+}

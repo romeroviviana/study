@@ -5,19 +5,27 @@ const lukeUrl = `${API_URL}${PEOPLE_URL.replace(':id',1)}`
 const opts = { crossDomain: true }
 
 function obtenerPersona(id, callback){
-	const url = `${API_URL}${PEOPLE_URL.replace(':id',id)}`
-	$.get(url,opts, function(persona){
-		console.log(`Hola, yo soy ${persona.name}`)
-
-		if(callback)
-		{
-			callback()
-		}
+	return new Promise((resolve, reject) => {
+		const url = `${API_URL}${PEOPLE_URL.replace(':id',id)}`
+		$.get(url,opts, function(data){
+			resolve(data)
+		})	
+		.fail(() => reject(id))
 	})
 }
-
-obtenerPersona(1, function(){
-	obtenerPersona(2, function(){
-		obtenerPersona(3)
+function onError(id){
+	console.log(`Hubo un error en el id ${id}`)
+}
+obtenerPersona(1)
+	.then((personaje) => {
+		console.log(`Hola, yo soy ${personaje.name}`)
+		return obtenerPersona(2)
 	})
-})
+	.then((personaje) => {
+		console.log(`Hola, yo soy ${personaje.name}`)
+		return obtenerPersona(3)
+	})
+	.then((personaje) => {
+		console.log(`Hola, yo soy ${personaje.name}`)
+	})
+	.catch(onError)

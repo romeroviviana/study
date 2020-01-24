@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Juego</title>
+	<style>
+		.gameboard{
+			display: grid;
+			justify-content: center;
+			align-content: center;
+			width: 100%;
+			height: 100vh;
+			display: grid;
+			grid-template-columns: auto auto;
+		}
+		.color{
+			width: 200px;
+			height: 200px;
+		}
+		.celeste{
+			background: lightgreen;
+		}
+		.violeta{
+			background: purple;
+		}
+		.naranja{
+			background: orange;
+		}
+		.verde{
+			background: green;
+		}
+		.btn-start{
+			position: absolute;
+    		left: calc(50% - 35px);
+    		top: calc(50% - 5px);
+		}
+		.hide{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="gameboard">
+		<div id="celeste" class="color celeste left"></div>
+		<div id="violeta" class="color violeta right"></div>
+		<div id="naranja" class="color naranja left"></div>
+		<div id="verde" class="color verde right"></div>
+		<button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar</button>
+	</div>
+
+	<script>
+		const btnEmpezar = document.getElementById('btnEmpezar')
+		const celeste = document.getElementById('celeste')
+		const violeta = document.getElementById('violeta')
+		const naranja = document.getElementById('naranja')
+		const verde = document.getElementById('verde')
+
+		class Juego{
+			constructor(){
+				this.inicializar()
+				this.generarSecuencia()
+				this.siguienteNivel()
+			}
+			inicializar(){
+				btnEmpezar.classList.add('hide')
+				this.nivel = 1
+				this.colores = {
+					celeste,
+					violeta,
+					naranja,
+					verde
+				}
+			}
+			generarSecuencia(){
+				this.secuencia = new Array(10).fill(0).map( n => Math.floor(Math.random() * 4))
+			}
+			siguienteNivel(){
+				this.iluminarSecuencia()
+			}
+			iluminarSecuencia(){
+				for(var i = 0; i < this.nivel; i++){
+					
+				}
+			}
+		}
+
+		function empezarJuego(){
+			window.juego = new Juego()
+		}
+	</script>
+</body>
+</html>
